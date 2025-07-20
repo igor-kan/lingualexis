@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Volume2, BookOpen, Eye, Camera, Star, Filter, Grid, List, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Volume2, BookOpen, Eye, Camera, Star, Filter, Grid, List, X, ChevronLeft, ChevronRight, Cube } from 'lucide-react';
+import VisualDictionary3D from './VisualDictionary3D';
 
 interface VisualWord {
   id: string;
@@ -32,6 +33,7 @@ export default function VisualDictionary({ language, onClose }: VisualDictionary
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [quizScore, setQuizScore] = useState(0);
   const [showQuizAnswer, setShowQuizAnswer] = useState(false);
+  const [show3D, setShow3D] = useState(false);
 
   const categories = [
     'all', 'animals', 'food', 'home', 'clothing', 'nature', 'transportation', 
@@ -268,6 +270,15 @@ export default function VisualDictionary({ language, onClose }: VisualDictionary
     );
   }
 
+  if (show3D) {
+    return (
+      <VisualDictionary3D
+        language={language}
+        onClose={() => setShow3D(false)}
+      />
+    );
+  }
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl max-w-6xl w-full mx-4 max-h-[90vh] flex flex-col">
@@ -276,6 +287,13 @@ export default function VisualDictionary({ language, onClose }: VisualDictionary
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-gray-900">Visual Dictionary</h2>
             <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setShow3D(true)}
+                className="flex items-center space-x-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                <Cube className="w-4 h-4" />
+                <span>3D View</span>
+              </button>
               <button
                 onClick={startQuiz}
                 className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
