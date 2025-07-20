@@ -202,6 +202,12 @@ function DashboardView({
         ))}
       </div>
 
+      {/* Daily Tip */}
+      <div className="mt-8 bg-white rounded-xl shadow-sm p-6">
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">Daily Learning Tip</h3>
+        <p className="text-gray-600">Consistency is key in language learning. Try to practice for at least 15 minutes every day to build strong habits and improve retention.</p>
+      </div>
+
       {/* Quick Actions */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <QuickActionCard
