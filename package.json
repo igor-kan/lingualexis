@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "Advanced language learning platform with spaced repetition and AI-powered features",
   "private": true,
-  "keywords": ["language-learning", "spaced-repetition", "vocabulary", "education", "ai"],
+  "keywords": [
+    "language-learning",
+    "spaced-repetition",
+    "vocabulary",
+    "education",
+    "ai"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -11,26 +17,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.12",
+    "@react-three/drei": "^9.116.0",
+    "@react-three/fiber": "^8.18.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.469.0",
+    "next": "15.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "next": "15.4.1",
-    "lucide-react": "^0.469.0",
-    "framer-motion": "^11.15.0",
-    "clsx": "^2.1.1",
-    "three": "^0.170.0",
-    "@react-three/fiber": "^8.18.0",
-    "@react-three/drei": "^9.116.0"
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.170.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/three": "^0.170.0",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
-    "@eslint/eslintrc": "^3",
-    "@types/three": "^0.170.0"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

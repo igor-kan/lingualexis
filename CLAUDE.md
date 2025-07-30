@@ -1,125 +1,113 @@
-# Lingualexis - AI-Powered Platform
+# LinguaLexis - AI-Powered Language Learning Platform
 
 ## Project Overview
-Advanced language learning platform with spaced repetition and AI-powered features
+**Live Application**: https://igor-kan.github.io/lingualexis/
+
+Advanced AI-powered language learning platform featuring personalized learning paths, intelligent spaced repetition, real-time pronunciation coaching, and adaptive content generation. Built with the latest React 19 and Next.js.
 
 ## Technology Stack
-- **Framework**: Next.js
-- **Language**: TypeScript
-- **Runtime**: React 19.1.0
+- **Framework**: Next.js 15 with React 19.1.0 (latest version)
+- **Language**: TypeScript with modern config files
 - **Styling**: Tailwind CSS
-- **Deployment**: GitHub Pages
+- **UI Components**: Radix UI, shadcn/ui
+- **Configuration**: 
+  - `next.config.ts` - TypeScript-based Next.js configuration
+  - `eslint.config.mjs` - Modern ESLint configuration
+- **Development**: Turbopack for faster builds
 
-## Key Features
-- Modern responsive web application
-- TypeScript for type safety
+## Planned AI Features
 
-## Core Dependencies
-- **UI Framework**: Radix UI component suite
-- **Styling**: class-variance-authority, clsx, tailwind-merge
-- **Lucide React**: Icon library
+### 🧠 Core AI Learning Systems
+
+#### Intelligent Spaced Repetition System (SRS)
+- **Adaptive Algorithms**: Optimal review timing with difficulty assessment
+- **Memory Prediction**: Personal memory curve analysis and interval optimization
+- **Multi-modal Learning**: Visual, auditory, and kinesthetic repetition methods
+- **Performance Tracking**: Individual word/phrase mastery progression
+
+#### AI-Powered Pronunciation Coaching
+- **Real-time Recognition**: Speech-to-text with phoneme-level analysis
+- **Accent Coaching**: Comparative analysis with native speaker patterns
+- **Progress Tracking**: Pronunciation improvement metrics and goals
+- **Interactive Feedback**: Visual and audio guidance for correction
+
+#### Adaptive Content Generation
+- **Personalized Curriculum**: Goal-based and proficiency-adapted learning paths
+- **Interest Integration**: Context-relevant examples based on user preferences
+- **Cultural Context**: Language learning with cultural immersion elements
+- **Dynamic Difficulty**: Real-time content adjustment based on performance
+
+#### NLP & Conversation AI
+- **AI Conversation Partners**: Interactive practice with simulated native speakers
+- **Grammar Analysis**: Real-time corrections with contextual explanations
+- **Pattern Recognition**: Language structure learning through contextual examples
+- **Contextual Learning**: Situation-based vocabulary and phrase acquisition
+
+#### Gamified Learning Intelligence
+- **Dynamic Achievements**: Learning pattern-based reward systems
+- **Peer Matching**: AI-powered competitive learning and social features
+- **Progress Gamification**: XP, levels, and milestone achievement systems
+
+## TypeScript Architecture
+
+### Core Interfaces
+```typescript
+interface LinguaLexisAIService {
+  calculateNextReview(word: Vocabulary, performance: Performance[]): Promise<ReviewSchedule>;
+  analyzePronunciation(audio: AudioData, target: string): Promise<PronunciationAnalysis>;
+  generatePersonalizedContent(user: UserProfile, topic: string): Promise<LearningContent>;
+  processConversationInput(input: string, context: ConversationContext): Promise<AIResponse>;
+}
+
+interface UserProfile {
+  targetLanguages: Language[];
+  proficiencyLevels: Record<string, ProficiencyLevel>;
+  learningGoals: LearningGoal[];
+  learningStyle: LearningStyle;
+  interests: Topic[];
+  studySchedule: SchedulePreference;
+}
+
+interface LearningContent {
+  type: 'vocabulary' | 'grammar' | 'conversation' | 'pronunciation';
+  difficulty: ProficiencyLevel;
+  content: ContentItem[];
+  exercises: Exercise[];
+  culturalContext?: CulturalNote[];
+}
+```
+
+### Planned Components
+- `components/SpacedRepetitionSystem.tsx` - Intelligent SRS implementation
+- `components/PronunciationCoach.tsx` - Real-time speech analysis and coaching
+- `components/ConversationPartner.tsx` - AI conversation practice interface
+- `components/AdaptiveCurriculum.tsx` - Personalized learning path generation
+- `components/ProgressAnalytics.tsx` - Comprehensive learning analytics dashboard
 
 ## Development Commands
 ```bash
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Start production server
-npm run start
-
-# Lint code
-npm run lint
-
+npm run dev          # Start development server with Turbopack
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run type-check   # TypeScript type checking
 ```
 
-## Project Structure
-```
-lingualexis/
-├── src/                     # Source code
-├── public/                  # Static assets
-├── next.config.ts           # Configuration
-├── tsconfig.json            # Configuration
-├── eslint.config.mjs        # Configuration
-└── package.json             # Dependencies
-```
+## Special Features
+- **Turbopack Integration**: Fast development builds with `next dev --turbopack`
+- **React 19 Features**: Latest React capabilities and performance optimizations
+- **TypeScript Configuration**: Modern config files for enhanced development experience
+- **AI-Ready Architecture**: Structured for seamless AI service integration
+
+## Future Implementation Roadmap
+1. **Phase 1**: Core SRS system with basic vocabulary management
+2. **Phase 2**: Pronunciation coaching with Web Speech API integration
+3. **Phase 3**: AI conversation partners and contextual learning
+4. **Phase 4**: Adaptive content generation and cultural context integration
+5. **Phase 5**: Advanced analytics and social learning features
 
 ## Deployment
 - **Platform**: GitHub Pages
-- **URL**: 
-- **Build**: Static site generation
-- **CI/CD**: Automated deployment via gh-pages
-
-## Development Notes
-- Uses Next.js App Router for modern React development
-
-## Next.js Features
-- **App Router**: Modern routing system
-- **Server Components**: Optimized rendering
-- **Static Site Generation**: Pre-rendered pages
-- **Image Optimization**: Automatic image processing
-- **API Routes**: Serverless API endpoints
-
-## Testing & Quality
-- TypeScript for type safety
-- ESLint for code quality
-
-## Future Enhancements
-- Performance optimizations
-- Advanced analytics integration
-- Enhanced user experience features
-- API integrations
-- Mobile app development
-
-
-
-## 🧭 Claude Code Navigation
-
-### Quick Commands
-**Development Scripts:**
-- `dev`: next dev --turbopack
-- `build`: next build
-- `start`: next start
-- `lint`: next lint
-
-**Key Files:**
-- `package.json` - Dependencies and scripts configuration
-- `README.md` - Project documentation and setup guide
-- `CLAUDE.md` - Comprehensive development guide for Claude
-- `next.config.ts` - Next.js framework configuration
-- `tsconfig.json` - TypeScript compiler configuration
-
-**Key Directories:**
-- `src/` - Source code and main application logic
-- `public/` - Static assets (images, icons, etc.)
-
-**Claude Code Files:**
-- `.claude/project-context.md` - Project overview and structure
-- `.claude/coding-standards.md` - Development guidelines and patterns
-- `.claude/commands/` - Custom Claude commands for common tasks
-- `.claude/context/` - Domain-specific development context
-
-
-### Quick Reference
-
-**Common Tasks:**
-- Start development: `npm run dev` or `bun dev`
-- Build project: `npm run build` or `bun build`
-- Lint code: `npm run lint` or `bun lint`
-
-**File Patterns:**
-- Components: `components/**/*.tsx`
-- Pages: `app/**/*.tsx` or `pages/**/*.tsx`
-- Utilities: `lib/**/*.ts`
-- Styles: `**/*.css` or use Tailwind classes
-- Tests: `**/*.test.ts` or `**/*.spec.ts`
-
-**Development Tips:**
-- Use TypeScript for type safety
-- Follow existing component patterns
-- Utilize shadcn/ui components
-- Implement responsive design with Tailwind
-- Test changes before committing
-
+- **URL**: https://igor-kan.github.io/lingualexis/
+- **Build Process**: Static export optimization
+- **Auto-deployment**: GitHub Actions workflow

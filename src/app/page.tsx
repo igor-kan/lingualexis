@@ -11,6 +11,7 @@ import QuizModes from '@/components/QuizModes';
 import Gamification from '@/components/Gamification';
 import ConversationPractice from '@/components/ConversationPractice';
 import VisualDictionary from '@/components/VisualDictionary';
+import WordDatabase from '@/components/WordDatabase';
 import { VocabularyWord } from '@/lib/vocabulary';
 
 export default function Home() {
@@ -287,73 +288,7 @@ function VocabularyView({ language, setShowVisualDictionary }: {
   language: string; 
   setShowVisualDictionary: (show: boolean) => void; 
 }) {
-  return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Vocabulary</h2>
-        <div className="flex space-x-3">
-          <button 
-            onClick={() => setShowVisualDictionary(true)}
-            className="flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
-          >
-            <Eye className="w-4 h-4" />
-            <span>Visual Dictionary</span>
-          </button>
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
-            Add New Word
-          </button>
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer"
-             onClick={() => setShowVisualDictionary(true)}>
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="p-3 bg-purple-100 rounded-full">
-              <Eye className="w-6 h-6 text-purple-600" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">Visual Dictionary</h3>
-              <p className="text-gray-600 text-sm">Learn with images</p>
-            </div>
-          </div>
-          <p className="text-gray-600 text-sm">
-            Explore vocabulary with visual associations, perfect for visual learners.
-          </p>
-        </div>
-        
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="p-3 bg-blue-100 rounded-full">
-              <BookOpen className="w-6 h-6 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">Word Lists</h3>
-              <p className="text-gray-600 text-sm">Organized collections</p>
-            </div>
-          </div>
-          <p className="text-gray-600 text-sm">
-            Create and manage custom word lists for different topics and difficulty levels.
-          </p>
-        </div>
-        
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="p-3 bg-green-100 rounded-full">
-              <Star className="w-6 h-6 text-green-600" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-900">Favorites</h3>
-              <p className="text-gray-600 text-sm">Your starred words</p>
-            </div>
-          </div>
-          <p className="text-gray-600 text-sm">
-            Quick access to your favorite words and phrases for easy review.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  return <WordDatabase />;
 }
 
 function SettingsView() {
