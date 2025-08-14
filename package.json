@@ -14,7 +14,31 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "analyze": "cross-env ANALYZE=true next build",
+    "bundle-analyzer": "@next/bundle-analyzer npm run build",
+    "audit:security": "npm audit --audit-level moderate",
+    "audit:fix": "npm audit fix",
+    "outdated": "npm outdated",
+    "clean": "rm -rf .next out dist node_modules/.cache",
+    "clean:all": "rm -rf .next out dist node_modules package-lock.json && npm install",
+    "precommit": "lint-staged",
+    "prepare": "husky install",
+    "deploy": "npm run build && npm run export",
+    "export": "next export",
+    "docker:build": "docker build -t lingualexis .",
+    "docker:run": "docker-compose up -d",
+    "docker:stop": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:shell": "docker-compose exec app sh"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
@@ -44,5 +68,14 @@
     "eslint-config-next": "15.4.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   }
 }
